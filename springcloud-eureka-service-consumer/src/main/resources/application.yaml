@@ -1,0 +1,27 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: service-consumer
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: false #开启Spring Cloud的重试功能，默认就是true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10001/eureka
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 6000 # 设置hystrix的超时时间为6000ms(6秒)
+feign:
+  hystrix:
+    enabled: true
+
+logging:
+  level:
+    cn.clboy.springcloud.eureka.service.consumer: debug

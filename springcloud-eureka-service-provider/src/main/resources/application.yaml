@@ -1,0 +1,14 @@
+server:
+  port: 8084
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/leyoumall
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: service-provider
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10001/eureka
